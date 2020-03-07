@@ -1,3 +1,3 @@
 # pdc-exercicios
 
-# Uri Union Judge python3 exercícios
+Uri Union Judge python3 exercícios
