@@ -9,6 +9,7 @@ elif media < 5.0:
     print("Media: {:.1f}".format(media))
     print("Aluno reprovado.")
 elif media >= 5.0 and media < 7.0:
+    print("Media: {:.1f}".format(media))
     print("Aluno em exame.")
     ne = float(input())
     print("Nota do exame:", ne)
