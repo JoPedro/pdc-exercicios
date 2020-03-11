@@ -28,6 +28,8 @@ if mm_final > mm_init:
     print("{} minuto(s)".format(mm_final - mm_init))
 elif mm_final < mm_init:
     print("{} minuto(s)".format(60 - mm_init + mm_final))
+else:
+    print("0 minuto(s)")
 
 if ss_final > ss_init:
     print("{} segundo(s)".format(ss_final - ss_init))
