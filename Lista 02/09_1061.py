@@ -1,39 +1,19 @@
-dia_init = input()
-h_init = input()
-dia_final = input()
-h_final = input()
+k, dd_init = input().split()
+hh_init, mm_init, ss_init = map(int,input().split(":"))
+j, dd_final = input().split()
+hh_final, mm_final, ss_final = map(int,input().split(":"))
+dd_init = int(dd_init)
+dd_final = int(dd_final)
 
-dd_final = int(dia_final[-1:])
-dd_init = int(dia_init[-1:])
-hh_final = int(h_final[:2])
-hh_init = int(h_init[:2])
-mm_final = int(h_final[5:-5])
-mm_init = int(h_init[5:-5])
-ss_final = int(h_final[-2:])
-ss_init = int(h_init[-2:])
+qtd_seg_final = (dd_final * 86400) + (hh_final * 3600) + (mm_final * 60) + ss_final
+qtd_seg_init = (dd_init * 86400) + (hh_init * 3600) + (mm_init * 60) + ss_init
 
-if dd_final > dd_init:
-    print("{} dia(s)".format(dd_final - (dd_init + 1)))
-else:
-    print("0 dia(s)")
+qtd_seg = qtd_seg_final - qtd_seg_init
 
-if hh_final > hh_init:
-    print("{} hora(s)".format(hh_final - hh_init))  
-elif hh_final < hh_init:
-    print("{} hora(s)".format(24 - hh_init + hh_final))
-else:
-    print("0 hora(s)")
-
-if mm_final > mm_init:
-    print("{} minuto(s)".format(mm_final - mm_init))
-elif mm_final < mm_init:
-    print("{} minuto(s)".format(60 - mm_init + mm_final))
-else:
-    print("0 minuto(s)")
-
-if ss_final > ss_init:
-    print("{} segundo(s)".format(ss_final - ss_init))
-elif ss_final < ss_init:
-    print("{} segundo(s)".format(60 - ss_init + ss_final))
-else:
-    print("0 segundo(s)")
+print("{} dia(s)".format(qtd_seg // 86400))
+qtd_seg %= 86400
+print("{} hora(s)".format(qtd_seg // 3600))
+qtd_seg %= 3600
+print("{} minuto(s)".format(qtd_seg // 60))
+qtd_seg %= 60
+print("{} segundo(s)".format(qtd_seg % 60))
